@@ -32,7 +32,6 @@ import android.graphics.Path;
 import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.ColorInt;
 
 /**
  * ArrowDrawable
@@ -47,7 +46,7 @@ public class ArrowDrawable extends ColorDrawable {
     private Path mPath;
     private final int mDirection;
 
-    ArrowDrawable(@ColorInt int foregroundColor, int direction) {
+    ArrowDrawable( int foregroundColor, int direction) {
         this.mBackgroundColor = Color.TRANSPARENT;
         this.mPaint.setColor(foregroundColor);
         this.mDirection = direction;
@@ -105,7 +104,7 @@ public class ArrowDrawable extends ColorDrawable {
         mPaint.setAlpha(alpha);
     }
 
-    public void setColor(@ColorInt int color) {
+    public void setColor(int color) {
         mPaint.setColor(color);
     }
 

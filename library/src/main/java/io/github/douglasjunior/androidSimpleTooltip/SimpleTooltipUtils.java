@@ -29,9 +29,6 @@ import android.content.res.Resources;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.ColorRes;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.StyleRes;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -139,7 +136,7 @@ public final class SimpleTooltipUtils {
         }
     }
 
-    public static void setTextAppearance(TextView tv, @StyleRes int textAppearanceRes) {
+    public static void setTextAppearance(TextView tv, int textAppearanceRes) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             tv.setTextAppearance(textAppearanceRes);
         } else {
@@ -148,7 +145,7 @@ public final class SimpleTooltipUtils {
         }
     }
 
-    public static int getColor(Context context, @ColorRes int colorRes) {
+    public static int getColor(Context context, int colorRes) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             return context.getColor(colorRes);
         } else {
@@ -157,7 +154,7 @@ public final class SimpleTooltipUtils {
         }
     }
 
-    public static Drawable getDrawable(Context context, @DrawableRes int drawableRes) {
+    public static Drawable getDrawable(Context context, int drawableRes) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             return context.getDrawable(drawableRes);
         } else {

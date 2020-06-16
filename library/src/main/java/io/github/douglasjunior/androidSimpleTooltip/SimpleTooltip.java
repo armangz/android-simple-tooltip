@@ -36,13 +36,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.ColorInt;
-import android.support.annotation.DimenRes;
-import android.support.annotation.Dimension;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.IdRes;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.StringRes;
+
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -94,7 +88,7 @@ public class SimpleTooltip implements PopupWindow.OnDismissListener {
     private final boolean mModal;
     private final View mContentView;
     private View mContentLayout;
-    @IdRes
+
     private final int mTextViewId;
     private final int mOverlayWindowBackgroundColor;
     private final CharSequence mText;
@@ -545,7 +539,7 @@ public class SimpleTooltip implements PopupWindow.OnDismissListener {
         private boolean dismissOnOutsideTouch = true;
         private boolean modal = false;
         private View contentView;
-        @IdRes
+
         private int textViewId = android.R.id.text1;
         private CharSequence text = "";
         private View anchorView;
@@ -681,7 +675,7 @@ public class SimpleTooltip implements PopupWindow.OnDismissListener {
          * @see Builder#contentView(TextView)
          * @see Builder#contentView(int)
          */
-        public Builder contentView(View contentView, @IdRes int textViewId) {
+        public Builder contentView(View contentView, int textViewId) {
             this.contentView = contentView;
             this.textViewId = textViewId;
             return this;
@@ -697,7 +691,7 @@ public class SimpleTooltip implements PopupWindow.OnDismissListener {
          * @see Builder#contentView(TextView)
          * @see Builder#contentView(int)
          */
-        public Builder contentView(@LayoutRes int contentViewId, @IdRes int textViewId) {
+        public Builder contentView( int contentViewId,  int textViewId) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             this.contentView = inflater.inflate(contentViewId, null, false);
             this.textViewId = textViewId;
@@ -713,7 +707,7 @@ public class SimpleTooltip implements PopupWindow.OnDismissListener {
          * @see Builder#contentView(TextView)
          * @see Builder#contentView(int, int)
          */
-        public Builder contentView(@LayoutRes int contentViewId) {
+        public Builder contentView( int contentViewId) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             this.contentView = inflater.inflate(contentViewId, null, false);
             this.textViewId = 0;
@@ -776,7 +770,7 @@ public class SimpleTooltip implements PopupWindow.OnDismissListener {
          * @param textRes <div class="pt">id do resource da String.</div>
          * @return this
          */
-        public Builder text(@StringRes int textRes) {
+        public Builder text( int textRes) {
             this.text = context.getString(textRes);
             return this;
         }
@@ -840,7 +834,7 @@ public class SimpleTooltip implements PopupWindow.OnDismissListener {
          * @return <tt>this</tt>
          * @see Builder#maxWidth(float)
          */
-        public Builder maxWidth(@DimenRes int maxWidthRes) {
+        public Builder maxWidth( int maxWidthRes) {
             this.maxWidth = context.getResources().getDimension(maxWidthRes);
             return this;
         }
@@ -890,7 +884,7 @@ public class SimpleTooltip implements PopupWindow.OnDismissListener {
          * @see Builder#animationPadding(float)
          */
         @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-        public Builder animationPadding(@DimenRes int animationPaddingRes) {
+        public Builder animationPadding( int animationPaddingRes) {
             this.animationPadding = context.getResources().getDimension(animationPaddingRes);
             return this;
         }
@@ -920,7 +914,7 @@ public class SimpleTooltip implements PopupWindow.OnDismissListener {
          * @return <tt>this</tt>
          * @see Builder#padding(float)
          */
-        public Builder padding(@DimenRes int paddingRes) {
+        public Builder padding( int paddingRes) {
             this.padding = context.getResources().getDimension(paddingRes);
             return this;
         }
@@ -945,7 +939,7 @@ public class SimpleTooltip implements PopupWindow.OnDismissListener {
          * @return <tt>this</tt>
          * @see Builder#margin(float)
          */
-        public Builder margin(@DimenRes int marginRes) {
+        public Builder margin( int marginRes) {
             this.margin = context.getResources().getDimension(marginRes);
             return this;
         }
@@ -955,12 +949,12 @@ public class SimpleTooltip implements PopupWindow.OnDismissListener {
             return this;
         }
 
-        public Builder backgroundColor(@ColorInt int backgroundColor) {
+        public Builder backgroundColor( int backgroundColor) {
             this.backgroundColor = backgroundColor;
             return this;
         }
 
-        public Builder overlayWindowBackgroundColor(@ColorInt int overlayWindowBackgroundColor) {
+        public Builder overlayWindowBackgroundColor( int overlayWindowBackgroundColor) {
             this.overlayWindowBackgroundColor = overlayWindowBackgroundColor;
             return this;
         }
@@ -983,12 +977,12 @@ public class SimpleTooltip implements PopupWindow.OnDismissListener {
             return this;
         }
 
-        public Builder arrowDrawable(@DrawableRes int drawableRes) {
+        public Builder arrowDrawable( int drawableRes) {
             this.arrowDrawable = SimpleTooltipUtils.getDrawable(context, drawableRes);
             return this;
         }
 
-        public Builder arrowColor(@ColorInt int arrowColor) {
+        public Builder arrowColor( int arrowColor) {
             this.arrowColor = arrowColor;
             return this;
         }
@@ -1080,7 +1074,7 @@ public class SimpleTooltip implements PopupWindow.OnDismissListener {
          * @see Builder#anchorView(View)
          * @see Builder#transparentOverlay(boolean)
          */
-        public Builder overlayOffset(@Dimension float overlayOffset) {
+        public Builder overlayOffset( float overlayOffset) {
             this.overlayOffset = overlayOffset;
             return this;
         }
